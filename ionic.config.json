@@ -1,0 +1,7 @@
+{
+  "name": "start-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
