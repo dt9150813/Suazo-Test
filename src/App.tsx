@@ -1,10 +1,9 @@
 import Menu from './components/Menu';
 import Page from './pages/Page';
 import React from 'react';
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonPage, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
-import { calculatorOutline, refreshOutline } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,25 +25,26 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 /* Pages */
-import Introduction from './pages/Introduction'
+import Introduction from './pages/Introduction/';
+
 
 const App: React.FC = () => {
 
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          {/* <Menu /> */}
-          <IonRouterOutlet id="main">
-            <Route path="/introduction" component={Introduction} />
-            <Redirect from="/" to="/toturial" exact />
-            {/* <Route path="/page/:name" component={Page} exact /> */}
-            {/* <Redirect from="/" to="/page/Inbox" exact /> */}
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  );
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonSplitPane contentId="main">
+					{/* <Menu /> */}
+					<IonRouterOutlet id="main">
+						{/* <Route path="/introduction" component={Introduction} exact /> */}
+						<Route path="/page/:name" component={Page} />
+						<Route exact path="/introduction" component={Introduction} />
+						<Redirect from="/" to="/introduction" exact />
+					</IonRouterOutlet>
+				</IonSplitPane>
+			</IonReactRouter>
+		</IonApp>
+	);
 };
 
 export default App;
