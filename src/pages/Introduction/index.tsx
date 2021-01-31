@@ -1,9 +1,8 @@
 import { IonContent, IonPage, IonButton, IonCol, IonRow, IonGrid } from '@ionic/react';
-import { language } from 'ionicons/icons';
 import React, { useState } from 'react';
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 import Splash from '../../components/core/Splash';
-import ExploreContainer from '../../components/ExploreContainer';
+// import ExploreContainer from '../../components/ExploreContainer';
 import './styles.scss';
 
 const Introduction: React.FC = () => {
@@ -21,7 +20,7 @@ const Introduction: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent fullscreen>
+      <IonContent fullscreen className="suazo_background">
         <Splash show={loadingSplash}></Splash>
         <IonGrid id="lan_selector">
           <IonRow>

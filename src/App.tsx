@@ -1,7 +1,7 @@
-import Menu from './components/Menu';
+// import Menu from './components/Menu';
 import Page from './pages/Page';
 import React from 'react';
-import { IonApp, IonPage, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 /* Pages */
-import Introduction from './pages/Introduction/';
+import Introduction from './pages/Introduction';
 
 
 const App: React.FC = () => {
