@@ -18,5 +18,4 @@ const Splash: React.FC<SplashProps> = ({ show }) => {
   );
 };
 
-// export default withIonLifeCycle(Splash);
 export default Splash;

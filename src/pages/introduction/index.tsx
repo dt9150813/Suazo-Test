@@ -41,7 +41,7 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
       <IonContent fullscreen className={showIntroduction ? "intro_background" : "suazo_background"} scrollY={false}>
         <Splash show={loadingSplash}></Splash>
 
-        <IonGrid id="lan_selector" hidden={showIntroduction}>
+        <IonGrid style={{ "marginTop": "40vh" }} hidden={showIntroduction}>
           <IonRow>
             <IonCol className="ion-text-center">
               <IonButton color="light" size="large" expand="block" onClick={() => lan_select('eng')}>
@@ -52,7 +52,7 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
           <IonRow>
             <IonCol className="ion-text-center">
               <IonButton color="light" size="large" expand="block" onClick={() => lan_select('spn')}>
-                Españo
+                Español
               </IonButton>
             </IonCol>
           </IonRow>
