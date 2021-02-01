@@ -1,0 +1,17 @@
+.signup_btn {
+  --background: var(--suazo-yellow);
+  --color: black;
+  --background-activated:lightgrey;
+}
+
+.login_btn {
+  --background: white;
+  --color: #000000;
+  border: 2px solid var(--suazo-yellow);
+  border-radius: 11px;
+  --background-activated:lightgrey;
+}
+
+.mt-6 {
+  margin-top:60vh;
+}

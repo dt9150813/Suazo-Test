@@ -25,7 +25,9 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 /* Pages */
-import Introduction from './pages/Introduction';
+import Introduction from './pages/introduction';
+import HomePage from './pages/homePage'
+import LoginSignup from './pages/loginSignup'
 
 
 const App: React.FC = () => {
@@ -36,9 +38,10 @@ const App: React.FC = () => {
 				<IonSplitPane contentId="main">
 					{/* <Menu /> */}
 					<IonRouterOutlet id="main">
-						{/* <Route path="/introduction" component={Introduction} exact /> */}
 						<Route path="/page/:name" component={Page} />
 						<Route exact path="/introduction" component={Introduction} />
+						<Route exact path="/home" component={HomePage} />
+						<Route exact path="/login-signup" component={LoginSignup} />
 						<Redirect from="/" to="/introduction" exact />
 					</IonRouterOutlet>
 				</IonSplitPane>
