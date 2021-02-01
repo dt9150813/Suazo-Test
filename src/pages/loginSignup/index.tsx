@@ -15,12 +15,12 @@ const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
     <IonPage>
       <IonContent fullscreen scrollY={false}>
         <IonGrid>
-          <IonRow style={{ "margin-top": "30vh" }}>
+          <IonRow style={{ "marginTop": "30vh" }}>
             <IonCol className="ion-text-center">
-              <img src={logo}></img>
+              <img src={logo} alt="suazo logo"></img>
             </IonCol>
           </IonRow>
-          <IonRow style={{ "margin-top": "30vh" }}>
+          <IonRow style={{ "marginTop": "30vh" }}>
             <IonCol className="ion-text-center">
               <IonButton className="signup_btn" size="large" expand="block" onClick={() => something_else()}>
                 SIGN UP
