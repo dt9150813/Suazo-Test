@@ -11,16 +11,20 @@ const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
     console.log('hello, welcome to the login page');
   }
 
+  const mt_3 = {
+    "marginTop": "30vh"
+  }
+
   return (
     <IonPage>
       <IonContent fullscreen scrollY={false}>
         <IonGrid>
-          <IonRow style={{ "marginTop": "30vh" }}>
+          <IonRow style={mt_3}>
             <IonCol className="ion-text-center">
               <img src={logo} alt="suazo logo"></img>
             </IonCol>
           </IonRow>
-          <IonRow style={{ "marginTop": "30vh" }}>
+          <IonRow style={mt_3}>
             <IonCol className="ion-text-center">
               <IonButton className="signup_btn" size="large" expand="block" onClick={() => something_else()}>
                 SIGN UP
