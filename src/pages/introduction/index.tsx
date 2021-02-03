@@ -6,15 +6,19 @@ import './styles.scss';
 import { RouteComponentProps } from 'react-router';
 
 /* Slide images */
-import empower_slide from '../../assets/introduction/empower.svg'
-import access_slide from '../../assets/introduction/access.svg'
-import organize_slide from '../../assets/introduction/organize.svg'
+import empowerSlide from '../../assets/introduction/empower.svg'
+import accessSlide from '../../assets/introduction/access.svg'
+import organizeSlide from '../../assets/introduction/organize.svg'
+import dot from '../../assets/introduction/dot.svg'
+import dotLg from '../../assets/introduction/dotLg.svg'
+
 
 const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
 
   const slideRef = useRef<HTMLIonSlidesElement>(null);
   const [showIntroduction, setshowIntroduction] = useState(false);
   const [loadingSplash, setLoadingSplash] = useState<boolean>(true);
+  const [slideIndex, setSlideIndex] = useState<number>(0);
 
   setTimeout(() => {
     setLoadingSplash(false);
@@ -35,6 +39,24 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
   const startApp = async () => {
     history.push('/home', { direction: 'none' });
   };
+
+  const handleSlideChange = () => {
+    slideRef.current?.getActiveIndex().then(
+      index => setSlideIndex(index)
+    );
+  }
+
+  // Costom Style
+  const dotStyle = {
+    "margin": "auto .3rem"
+  }
+  const dotColStyle = {
+    "position": "absolute",
+    "bottom": "1rem",
+    "display": "flex",
+    "justifyContent": "center"
+  }
+
 
   return (
     <IonPage id="introduction_page">
@@ -58,9 +80,9 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
         </IonGrid>
 
-        <IonSlides ref={slideRef} pager={false} hidden={!showIntroduction} options={slideOpts}>
+        <IonSlides ref={slideRef} pager={false} hidden={!showIntroduction} options={slideOpts} onIonSlideWillChange={handleSlideChange}>
           <IonSlide>
-            <img src={empower_slide} alt="empower slide" className="slide-image" />
+            <img src={empowerSlide} alt="empower slide" className="slide-image" />
             <div className="description">
               <h1 className="slide-title">
                 Empower
@@ -72,7 +94,7 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
           </IonSlide>
 
           <IonSlide>
-            <img src={access_slide} alt="access slide" className="slide-image" />
+            <img src={accessSlide} alt="access slide" className="slide-image" />
             <div className="description">
               <h1 className="slide-title">
                 Access
@@ -84,7 +106,7 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
           </IonSlide>
 
           <IonSlide>
-            <img src={organize_slide} alt="organize slide" className="slide-image" />
+            <img src={organizeSlide} alt="organize slide" className="slide-image" />
             <div className="description">
               <h1 className="slide-title">
                 Organize
@@ -103,6 +125,15 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
             </IonButton>
           </IonSlide>
         </IonSlides>
+        <IonGrid hidden={!showIntroduction || slideIndex == 3}>
+          <IonRow>
+            <IonCol style={dotColStyle}>
+              <img src={slideIndex == 0 ? dotLg : dot} alt="dot" style={dotStyle} />
+              <img src={slideIndex == 1 ? dotLg : dot} alt="dot" style={dotStyle} />
+              <img src={slideIndex == 2 ? dotLg : dot} alt="dot" style={dotStyle} />
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
