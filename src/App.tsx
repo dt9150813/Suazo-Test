@@ -1,4 +1,4 @@
-import Menu from './components/Menu';
+// import Menu from './components/Menu';
 import Page from './pages/Page';
 import React from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
@@ -24,21 +24,30 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* Pages */
+import Introduction from './pages/introduction';
+import HomePage from './pages/homePage'
+import LoginSignup from './pages/loginSignup'
+
+
 const App: React.FC = () => {
 
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  );
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonSplitPane contentId="main">
+					{/* <Menu /> */}
+					<IonRouterOutlet id="main">
+						<Route path="/page/:name" component={Page} />
+						<Route exact path="/introduction" component={Introduction} />
+						<Route exact path="/home" component={HomePage} />
+						<Route exact path="/login-signup" component={LoginSignup} />
+						<Redirect from="/" to="/introduction" exact />
+					</IonRouterOutlet>
+				</IonSplitPane>
+			</IonReactRouter>
+		</IonApp>
+	);
 };
 
 export default App;

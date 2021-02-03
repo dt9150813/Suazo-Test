@@ -1,7 +1,6 @@
 import React from 'react';
 import './Splash.scss';
 import logo from '../../assets/suazo_logo.png';
-import { withIonLifeCycle } from '@ionic/react';
 import FadeInOut from '../animations/FadeInOut';
 
 interface SplashProps {
@@ -9,14 +8,14 @@ interface SplashProps {
 }
 
 const Splash: React.FC<SplashProps> = ({ show }) => {
- 
+
   return (
     <FadeInOut show={show}>
       <div className="splash-background">
-        <img src={logo} alt="Suazo logo"/>
+        <img src={logo} alt="Suazo logo" />
       </div>
     </FadeInOut>
   );
 };
 
-export default withIonLifeCycle(Splash);
+export default Splash;
