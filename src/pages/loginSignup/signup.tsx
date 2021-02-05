@@ -2,6 +2,7 @@ import { IonContent, IonItem, IonList, IonPage, IonLabel, IonInput, IonButton } 
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { db } from '../../db';
+import firebase from "firebase/app";
 
 
 
@@ -24,7 +25,25 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
       console.error("Error adding document: ", error);
     });
   }
+  
+  const loginAccount = () => {
+    console.log("here");
+    firebase.auth().createUserWithEmailAndPassword(email!, password!)
+    .then((userCredential) => {
+    // Signed in 
+    console.log("signed in");
+      var user = userCredential.user;
+    // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage)
+    // ..
+    });
 
+  }
+  
   return (
     <IonPage>
       <IonContent fullscreen scrollY={false} className="ion-text-center">
@@ -45,7 +64,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
         </IonList>
         <IonButton className="primary_btn" onClick={createAccount}>Create</IonButton>
         <br />
-        <a>LOG IN</a>
+        <a onClick={loginAccount}>LOG IN</a>
       </IonContent>
     </IonPage >
   );
