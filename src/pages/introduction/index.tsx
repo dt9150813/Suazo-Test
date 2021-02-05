@@ -125,12 +125,12 @@ const Introduction: React.FC<RouteComponentProps> = ({ history }) => {
             </IonButton>
           </IonSlide>
         </IonSlides>
-        <IonGrid hidden={!showIntroduction || slideIndex == 3}>
+        <IonGrid hidden={!showIntroduction || slideIndex === 3}>
           <IonRow>
             <IonCol style={dotColStyle}>
-              <img src={slideIndex == 0 ? dotLg : dot} alt="dot" style={dotStyle} />
-              <img src={slideIndex == 1 ? dotLg : dot} alt="dot" style={dotStyle} />
-              <img src={slideIndex == 2 ? dotLg : dot} alt="dot" style={dotStyle} />
+              <img src={slideIndex === 0 ? dotLg : dot} alt="dot" style={dotStyle} />
+              <img src={slideIndex === 1 ? dotLg : dot} alt="dot" style={dotStyle} />
+              <img src={slideIndex === 2 ? dotLg : dot} alt="dot" style={dotStyle} />
             </IonCol>
           </IonRow>
         </IonGrid>

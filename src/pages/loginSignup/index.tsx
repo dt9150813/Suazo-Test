@@ -11,6 +11,10 @@ const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
     console.log('hello, welcome to the login page');
   }
 
+  const toSignUp = () => {
+    history.push('/login-signup/signup', { direction: 'none' });
+  }
+
   const mt_3 = {
     "marginTop": "30vh"
   }
@@ -26,14 +30,14 @@ const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow style={mt_3}>
             <IonCol className="ion-text-center">
-              <IonButton className="signup_btn" size="large" expand="block" onClick={() => something_else()}>
+              <IonButton className="primary_btn" size="large" expand="block" onClick={() => toSignUp()}>
                 SIGN UP
               </IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol className="ion-text-center">
-              <IonButton className="login_btn" size="large" expand="block" onClick={() => something_else()}>
+              <IonButton className="secondary_btn" size="large" expand="block" onClick={() => something_else()}>
                 LOG IN
               </IonButton>
             </IonCol>
