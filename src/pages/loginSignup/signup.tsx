@@ -1,13 +1,29 @@
 import { IonContent, IonItem, IonList, IonPage, IonLabel, IonInput, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
+import { db } from '../../db';
+
 
 
 const Signup: React.FC<RouteComponentProps> = ({ history }) => {
-
+  
   const [name, setName] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
+  
+  const createAccount = () => {
+    db.collection("users").add({
+      name: name,
+      email: email,
+      password: password
+    })
+    .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+    });
+  }
 
   return (
     <IonPage>
@@ -27,7 +43,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
             <IonInput value={password} onIonChange={e => setPassword(e.detail.value!)}></IonInput>
           </IonItem>
         </IonList>
-        <IonButton className="primary_btn">Create</IonButton>
+        <IonButton className="primary_btn" onClick={createAccount}>Create</IonButton>
         <br />
         <a>LOG IN</a>
       </IonContent>
