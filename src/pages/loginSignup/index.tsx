@@ -7,12 +7,12 @@ import logo from '../../assets/suazo_logo.png'
 
 const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
 
-  const something_else = () => {
-    console.log('hello, welcome to the login page');
-  }
-
   const toSignUp = () => {
     history.push('/login-signup/signup', { direction: 'none' });
+  }
+
+  const toLogIn = () => {
+    history.push('/login-signup/login', { direction: 'none' });
   }
 
   const mt_3 = {
@@ -37,7 +37,7 @@ const LoginSignup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol className="ion-text-center">
-              <IonButton className="secondary_btn" size="large" expand="block" onClick={() => something_else()}>
+              <IonButton className="secondary_btn" size="large" expand="block" onClick={() => toLogIn()}>
                 LOG IN
               </IonButton>
             </IonCol>

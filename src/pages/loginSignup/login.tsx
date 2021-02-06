@@ -9,8 +9,9 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
 
-  const toLogIn = () => {
-    history.push('/login-signup/login', { direction: 'none' });
+
+  const toSignUp = () => {
+    history.push('/login-signup/signup', { direction: 'none' });
   }
 
   const signupForm = {
@@ -25,13 +26,10 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           <IonRow>
             <IonCol>
               <IonList style={signupForm}>
-                <h1>Create Account</h1>
+                <h1>Welcome Back</h1>
+                <h5>Log in to continue</h5>
                 <IonItem>
-                  <IonLabel position="floating">Name</IonLabel>
-                  <IonInput value={name} onIonChange={e => setName(e.detail.value!)}></IonInput>
-                </IonItem>
-                <IonItem>
-                  <IonLabel position="floating">Email</IonLabel>
+                  <IonLabel position="floating">Mail ID</IonLabel>
                   <IonInput value={email} onIonChange={e => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
                 <IonItem>
@@ -43,12 +41,12 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton className="primary_btn">Create</IonButton>
+              <IonButton className="primary_btn">LOG IN</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
-              <a className="secondary_text_link" onClick={toLogIn}>LOG IN</a>
+              <a className="secondary_text_link" onClick={toSignUp}>Create account</a>
             </IonCol>
           </IonRow>
         </IonGrid>

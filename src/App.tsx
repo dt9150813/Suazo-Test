@@ -29,6 +29,7 @@ import Introduction from './pages/introduction';
 import HomePage from './pages/homePage'
 import LoginSignup from './pages/loginSignup'
 import Signup from './pages/loginSignup/signup'
+import Login from './pages/loginSignup/login'
 
 // import AppRoutes from './routes';
 
@@ -46,6 +47,7 @@ const App: React.FC = () => {
 						<Route exact path="/home" component={HomePage} />
 						<Route exact path="/login-signup" component={LoginSignup} />
 						<Route exact path="/login-signup/signup" component={Signup} />
+						<Route exact path="/login-signup/login" component={Login} />
 						<Redirect from="/" to="/introduction" exact />
 					</IonRouterOutlet>
 					{/* <AppRoutes /> */}

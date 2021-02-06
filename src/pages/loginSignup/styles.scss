@@ -12,6 +12,15 @@
   --background-activated:lightgrey;
 }
 
+.secondary_text_link {
+  color: black;
+  font-weight: 200;
+  letter-spacing: -0.3px;
+  text-decoration: underline;
+  cursor:pointer;
+  margin-top: .5rem;
+}
+
 .mt-6 {
   margin-top:60vh;
 }
