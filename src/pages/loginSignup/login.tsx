@@ -5,18 +5,11 @@ import { RouteComponentProps } from 'react-router';
 
 const Signup: React.FC<RouteComponentProps> = ({ history }) => {
 
-  const [name, setName] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
 
-
   const toSignUp = () => {
     history.push('/login-signup/signup', { direction: 'none' });
-  }
-
-  const signupForm = {
-    "width": "80vw",
-    "margin": "0 auto"
   }
 
   return (
@@ -25,14 +18,14 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonList style={signupForm}>
+              <IonList className="signup_form">
                 <h1>Welcome Back</h1>
                 <h5>Log in to continue</h5>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Mail ID</IonLabel>
                   <IonInput value={email} onIonChange={e => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Password</IonLabel>
                   <IonInput value={password} onIonChange={e => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -41,7 +34,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton className="primary_btn">LOG IN</IonButton>
+              <IonButton className="primary_btn signup_form" size="large" expand="block" >LOG IN</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>

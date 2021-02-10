@@ -91,32 +91,27 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
     history.push('/login-signup/login', { direction: 'none' });
   }
 
-  const signupForm = {
-    "width": "80vw",
-    "margin": "0 auto"
-  }
-
   return (
     <IonPage>
       <IonContent fullscreen scrollY={false} className="ion-text-center">
         <IonGrid>
           <IonRow>
             <IonCol>
-              <IonList style={signupForm}>
+              <IonList className="signup_form">
                 <h1>Create Account</h1>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Name</IonLabel>
                   <IonInput value={name} onIonChange={e => setName(e.detail.value!)}></IonInput>
                 </IonItem>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Email</IonLabel>
                   <IonInput value={email} onIonChange={e => setEmail(e.detail.value!)}></IonInput>
                 </IonItem>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Password</IonLabel>
                   <IonInput type="password" value={password} onIonChange={e => setPassword(e.detail.value!)}></IonInput>
                 </IonItem>
-                <IonItem>
+                <IonItem className="signup_form_input">
                   <IonLabel position="floating">Confirm Password</IonLabel>
                   <IonInput type="password" value={passwordConfirm} onIonChange={e => setPasswordConfirm(e.detail.value!)}></IonInput>
                 </IonItem>
@@ -125,7 +120,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton className="primary_btn" onClick={validateInputs}>Create</IonButton>
+              <IonButton className="primary_btn signup_form" size="large" expand="block" onClick={validateInputs}>Create</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
