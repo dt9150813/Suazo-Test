@@ -40,7 +40,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
       console.log(errors);
     } else {
       console.log('now we can move and save the user');
-      // createAccount();
+      createAccount();
     }
   }
 
@@ -55,37 +55,21 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
       console.error("Error adding document: ", error);
     });
 
-    // auth.createUserWithEmailAndPassword(email!, password!)
-    //   .then((userCredential) => {
-    //     // Signed in
-    //     console.log("account created - signed in");
-    //     var user = userCredential.user;
-    //     // ...
-    //   })
-    //   .catch((error) => {
-    //     var errorCode = error.code;
-    //     var errorMessage = error.message;
-    //     console.log(errorMessage)
-    //     // ..
-    //   });
+    auth.createUserWithEmailAndPassword(email!, password!)
+      .then((userCredential) => {
+        // Signed in
+        console.log("account created - signed in");
+        var user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage)
+        // ..
+      });
   }
 
-  // const loginAccount = () => {
-  //   console.log("here");
-  //   auth.signInWithEmailAndPassword(email!, password!)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       console.log("signed in");
-  //       var user = userCredential.user;
-  //       // ...
-  //     })
-  //     .catch((error) => {
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-  //       console.log(errorMessage)
-  //       // ..
-  //     });
-  // }
 
   const toLogIn = () => {
     history.push('/login-signup/login', { direction: 'none' });

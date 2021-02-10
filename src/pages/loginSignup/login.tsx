@@ -1,6 +1,7 @@
 import { IonContent, IonItem, IonList, IonPage, IonLabel, IonInput, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
+import { db, auth } from '../../db';
 
 
 const Signup: React.FC<RouteComponentProps> = ({ history }) => {
@@ -10,6 +11,24 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
 
   const toSignUp = () => {
     history.push('/login-signup/signup', { direction: 'none' });
+  }
+
+
+  const loginAccount = () => {
+    console.log("here");
+    auth.signInWithEmailAndPassword(email!, password!)
+      .then((userCredential) => {
+        // Signed in
+        console.log("signed in");
+        var user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage)
+        // ..
+      });
   }
 
   return (
@@ -34,7 +53,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton className="primary_btn signup_form" size="large" expand="block" >LOG IN</IonButton>
+              <IonButton className="primary_btn signup_form" size="large" expand="block" disabled={true}  onClick={loginAccount} >LOG IN</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
