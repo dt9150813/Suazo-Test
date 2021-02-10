@@ -53,7 +53,7 @@ const Signup: React.FC<RouteComponentProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton className="primary_btn signup_form" size="large" expand="block" disabled={true}  onClick={loginAccount} >LOG IN</IonButton>
+              <IonButton className="primary_btn signup_form" size="large" expand="block" onClick={loginAccount} >LOG IN</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
