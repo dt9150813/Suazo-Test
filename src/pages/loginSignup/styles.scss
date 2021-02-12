@@ -1,10 +1,10 @@
-.signup_btn {
+.primary_btn {
   --background: var(--suazo-yellow);
   --color: black;
   --background-activated:lightgrey;
 }
 
-.login_btn {
+.secondary_btn {
   --background: white;
   --color: #000000;
   border: 2px solid var(--suazo-yellow);
@@ -12,6 +12,39 @@
   --background-activated:lightgrey;
 }
 
+.secondary_text_link {
+  color: black;
+  font-weight: 200;
+  letter-spacing: -0.3px;
+  text-decoration: underline;
+  cursor:pointer;
+  margin-top: .5rem;
+}
+
 .mt-6 {
   margin-top:60vh;
+}
+
+.signup_form {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.signup_form_input {
+  --padding-start: 0px;
+}
+
+.bordered_input {
+  --border-style:none;
+  --inner-padding-end: 0;
+}
+
+.bordered_input ion-input {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.bordered_input ion-label:not(.ios) {
+  margin-bottom: 0.6rem;
 }
