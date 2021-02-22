@@ -2,6 +2,7 @@ import { IonContent, IonPage } from '@ionic/react';
 import React, { useState } from 'react';
 import Splash from '../../components/core/Splash';
 import { RouteComponentProps } from 'react-router';
+import {spawn} from 'child_process';
 
 const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
 
@@ -25,7 +26,7 @@ const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
     <IonPage onLoad={app_init}>
       <IonContent fullscreen scrollY={false}>
         <Splash show={loadingSplash}></Splash>
-
+          <script src='../../pdf.js'></script>
           This is the home page, but nothing is here yet :'(
 
       </IonContent>
